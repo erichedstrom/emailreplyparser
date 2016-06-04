@@ -192,3 +192,9 @@ exports.test_correctly_reads_top_post_when_line_starts_with_On = function(test){
     test.ok((new RegExp('^_')).test(reply.fragments[4].to_s()));
     test.done();
 }
+
+exports.test_parse_gmail = function(test){
+    var body = get_email('email_from_gmail');
+    test.equal("Let's do it!", body.fragments[0].to_s());
+    test.done();
+};
